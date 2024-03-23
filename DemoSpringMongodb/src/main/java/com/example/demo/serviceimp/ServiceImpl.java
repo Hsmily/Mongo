@@ -1,0 +1,51 @@
+
+package com.example.demo.serviceimp;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Datamodel;
+import com.example.demo.repository.repo;
+import com.example.demo.service.Dataservice;
+
+@Service
+public  class ServiceImpl implements Dataservice {
+
+
+
+ @Autowired
+    private repo repository;
+
+@Override
+public Datamodel save(Datamodel model) {
+	// TODO Auto-generated method stub
+	return repository.save(model);
+}
+
+@Override
+public void deleteById(String id) {
+	// TODO Auto-generated method stub
+	repository.deleteById(id);
+}
+
+@Override
+public Optional<Datamodel> findById(String id) {
+	// TODO Auto-generated method stub
+	return  repository.findById(id);
+}
+
+@Override
+public List<Datamodel> findAll() {
+	// TODO Auto-generated method stub
+	return repository.findAll();
+}
+
+
+    
+
+	
+
+}
